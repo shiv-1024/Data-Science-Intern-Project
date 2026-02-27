@@ -1,201 +1,122 @@
-# Data-Science-Intern-Project
+# 📊 Trader Behavior & Market Sentiment Analysis
 
-📊 Trader Behavior & Sentiment Analysis
-📌 Project Overview
+## 🚀 Overview
 
-This project analyzes trader performance and behavioral patterns under different market sentiment regimes (Fear vs Greed).
+This project analyzes how trader performance and behavior change under
+different market sentiment regimes (**Fear vs Greed**).
 
-The objective is to:
+Using trade-level data, we evaluate:
 
-Compare trader performance across sentiment regimes
+-   📈 Performance differences (PnL, win rate, volatility)
+-   🔄 Behavioral shifts (trade frequency, position size, long/short
+    bias)
+-   🧩 Trader segmentation (consistent vs inconsistent, frequent vs
+    infrequent)
+-   🧠 Strategy rules based on data-driven insights
 
-Detect behavioral changes (trade frequency, position size, bias)
+The goal is to transform raw trade data into actionable trading
+insights.
 
-Segment traders into meaningful categories
+------------------------------------------------------------------------
 
-Propose data-driven strategy rules
+## 📁 Dataset Features
 
-The dataset contains executed trade data including PnL, position size, sentiment classification, and trader identifiers.
+  Column            Description
+  ----------------- ---------------------------------
+  Account           Trader identifier
+  Trade ID          Unique trade identifier
+  Closed PnL        Profit/Loss per trade
+  Size USD          Trade size in USD
+  classification    Market sentiment (Fear / Greed)
+  Side              Long / Short
+  date              Trade date
+  Execution Price   Execution price
+  Fee               Trading fee
 
-📁 Dataset Description
+------------------------------------------------------------------------
 
-Main columns used:
+## 📊 Analysis Performed
 
-Column	Description
-Account	Trader identifier
-Trade ID	Unique trade ID
-Closed PnL	Profit/Loss per trade
-Size USD	Trade position size in USD
-classification	Market sentiment (Fear / Greed)
-Side	Long / Short
-date	Trade date
-Execution Price	Trade execution price
-🎯 Project Goals
-1️⃣ Performance Analysis
+### 1️⃣ Performance Analysis (Fear vs Greed)
 
-Total PnL by sentiment
+-   Total PnL
+-   Average PnL
+-   Win Rate
+-   PnL Volatility (Drawdown Proxy)
 
-Average PnL
+### 2️⃣ Behavioral Analysis
 
-Win rate
+-   Trade frequency per day
+-   Position size distribution
+-   Long vs Short ratio by sentiment
 
-Drawdown proxy (PnL volatility)
+### 3️⃣ Trader Segmentation
 
-2️⃣ Behavioral Analysis
+-   Frequent vs Infrequent traders
+-   Consistent vs Inconsistent traders
+-   Volatility-based risk profiling
 
-Trade frequency per day
+------------------------------------------------------------------------
 
-Position size changes
+## 📈 Key Insights
 
-Long/Short bias shifts
+### ✅ Insight 1 --- Performance Differs by Sentiment
 
-3️⃣ Trader Segmentation
+Performance metrics show variation between Fear and Greed regimes,
+including differences in win rate and volatility.
 
-Frequent vs Infrequent traders
+### ✅ Insight 2 --- Traders Become More Aggressive During Greed
 
-Consistent vs Inconsistent traders
+Trade frequency and average position size increase during Greed periods.
 
-Volatility-based profiling
+### ✅ Insight 3 --- Consistent Traders Outperform
 
-4️⃣ Strategy Design
+Traders with higher win rates exhibit more stable performance compared
+to high-frequency inconsistent traders.
 
-Regime-based position sizing
+------------------------------------------------------------------------
 
-Capital allocation by trader segment
+## 🧠 Strategy Rules Proposed
 
-Risk control rules
+### 📉 Rule 1 --- Risk Reduction During Fear
 
-📊 Key Metrics Computed
-Performance Metrics
+-   Reduce position size
+-   Avoid scaling inconsistent traders
+-   Prioritize capital preservation
 
-Total PnL
+### 📈 Rule 2 --- Selective Scaling During Greed
 
-Average PnL
+-   Increase exposure only for consistent traders
+-   Limit aggressive, low win-rate traders
+-   Maintain controlled expansion
 
-Win Rate = % of trades with positive PnL
+------------------------------------------------------------------------
 
-PnL Standard Deviation (drawdown proxy)
+## 🛠 Tech Stack
 
-Behavioral Metrics
+-   Python
+-   Pandas
+-   Matplotlib
+-   Seaborn
+-   Jupyter Notebook
 
-Average trades per day
+------------------------------------------------------------------------
 
-Average position size (USD)
+## ▶ How to Run
 
-Long/Short ratio
-
-Segmentation Metrics
-
-Total trades per trader
-
-Win rate per trader
-
-PnL volatility per trader
-
-📈 Visualizations
-
-The project includes:
-
-Bar charts: Fear vs Greed performance
-
-Boxplots: Position size distribution
-
-Histograms: Win rate distribution
-
-Trade frequency comparison
-
-Long/Short bias by sentiment
-
-Libraries used:
-
-pandas
-
-matplotlib
-
-seaborn
-
-🧠 Key Findings (Example Summary)
-
-Performance differs between Fear and Greed regimes.
-
-Trade frequency increases during Greed periods.
-
-Position sizes tend to be larger in Greed environments.
-
-Consistent traders outperform high-frequency inconsistent traders.
-
-Volatility (drawdown proxy) increases in Fear regimes.
-
-🚀 Strategy Rules Proposed
-Rule 1 — Risk Adjustment by Sentiment
-
-During Fear days:
-
-Reduce position size
-
-Restrict low win-rate traders
-
-Focus on capital preservation
-
-During Greed days:
-
-Increase exposure selectively
-
-Allocate more capital to consistent traders
-
-Rule 2 — Segment-Based Capital Allocation
-
-Allocate more capital to consistent traders
-
-Cap risk for high-frequency inconsistent traders
-
-Avoid scaling aggressive traders in Fear regimes
-
-🛠 Implementation Workflow
-
-Data cleaning and preprocessing
-
-Feature engineering (win rate, volatility, segmentation)
-
-Sentiment-based grouping
-
-Visualization & analysis
-
-Strategy simulation via adjusted position sizing
-
-📦 How to Run
+``` bash
 pip install pandas matplotlib seaborn
+```
 
-Open the notebook and execute all cells sequentially.
+Open the notebook and run all cells.
 
-Ensure:
+------------------------------------------------------------------------
 
-Closed PnL and Size USD are numeric
+## 📌 Conclusion
 
-date column is datetime
+This project demonstrates how:
 
-🔮 Future Improvements
-
-Add true leverage analysis (if margin data available)
-
-Compute Sharpe ratio & Sortino ratio
-
-Add cumulative equity curve
-
-Perform rolling drawdown analysis
-
-Add statistical significance testing
-
-Convert to full backtesting framework
-
-📌 Conclusion
-
-This project demonstrates how trader performance and behavior shift across market sentiment regimes and how segmentation-based strategies can improve risk-adjusted returns.
-
-The analysis highlights the importance of:
-
-Regime-aware risk management
-
-Behavioral profiling
-
-Data-driven capital allocation
+-   Market sentiment influences trader performance
+-   Behavioral metrics reveal risk patterns
+-   Segmentation enables smarter capital allocation
+-   Regime-aware strategies improve decision-making
