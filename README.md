@@ -83,13 +83,6 @@ to high-frequency inconsistent traders.
 -   Reduce position size
 -   Avoid scaling inconsistent traders
 -   Prioritize capital preservation
-
-### 📈 Rule 2 --- Selective Scaling During Greed
-
--   Increase exposure only for consistent traders
--   Limit aggressive, low win-rate traders
--   Maintain controlled expansion
-
 ------------------------------------------------------------------------
 
 ## 🛠 Tech Stack
